@@ -1,5 +1,8 @@
-require './game'
-require './math_questions.rb'
+# main.rb
+require './question'
 require './player'
+require './game'
 
-puts "So, you're #{age} old, #{height} tall and #{weight} heavy."
+# start it all!
+new_game = Game.new
+new_game.start_game_loop
