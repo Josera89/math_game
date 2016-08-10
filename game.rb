@@ -29,6 +29,7 @@ class Game
     else
       @current_player += 1
     end
+    puts "----- NEW TURN -----"
   end
 
   def num_players_alive
@@ -57,6 +58,16 @@ class Game
   def show_stats
     @players.each_with_index do |player, i|
       puts "Player:#{i+1} has #{player.lives}"
+    end
+      if num_players_alive < 2
+        # puts "The winner is:" winner
+        puts "GAME OVER"
+      end
+  end
+
+  def winner
+    winning_player = @players.detect do |player|
+      player.lives > 0
     end
   end
 
